@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://unit.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/unit.png" type="Texture" id=2]
+
+[node name="root" type="Node2D"]
+
+script = ExtResource( 1 )
+center = null
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+
