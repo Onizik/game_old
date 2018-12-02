@@ -7,7 +7,11 @@
 [ext_resource path="res://assets/other stuff/groupLogo.png" type="Texture" id=5]
 [ext_resource path="res://player.tscn" type="PackedScene" id=6]
 
+<<<<<<< HEAD
 [node name="root" type="Node2D"]
+=======
+[node name="Node2D" type="Node2D" index="0"]
+>>>>>>> c0c4ef190206d37652a93e6fbb0f97a496713d5a
 
 position = Vector2( 33.0499, 31.3003 )
 
