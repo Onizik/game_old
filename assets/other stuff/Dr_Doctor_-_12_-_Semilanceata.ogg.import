@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Dr_Doctor_-_12_-_Semilanceata.ogg-6fa810052e228fb8b9986ac311fb03e8.oggstr"
+
+[deps]
+
+source_file="res://assets/other stuff/Dr_Doctor_-_12_-_Semilanceata.ogg"
+dest_files=[ "res://.import/Dr_Doctor_-_12_-_Semilanceata.ogg-6fa810052e228fb8b9986ac311fb03e8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

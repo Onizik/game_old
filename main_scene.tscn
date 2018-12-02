@@ -3,11 +3,11 @@
 [ext_resource path="res://main_scene.gd" type="Script" id=1]
 [ext_resource path="res://assets/other stuff/background.png" type="Texture" id=2]
 [ext_resource path="res://player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/other stuff/background_music (online-audio-converter.com).wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/other stuff/background_music.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/other stuff/fire.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/other stuff/damage.wav" type="AudioStream" id=6]
 
-[node name="root" type="Node2D" index="0"]
+[node name="root" type="Node2D"]
 
 script = ExtResource( 1 )
 
