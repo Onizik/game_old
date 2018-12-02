@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/other stuff/background1.png" type="Texture" id=1]
+[ext_resource path="res://assets/other stuff/Title.png" type="Texture" id=2]
+[ext_resource path="res://assets/other stuff/playbutton.png" type="Texture" id=3]
+[ext_resource path="res://assets/other stuff/groupLogo.png" type="Texture" id=4]
+
+[node name="Node2D" type="Node2D" index="0"]
+
+position = Vector2( 33.0499, 31.3003 )
+
+[node name="background" type="Sprite" parent="." index="0"]
+
+position = Vector2( 367.623, 369.781 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="title" type="Sprite" parent="." index="1"]
+
+position = Vector2( 561.334, 234.844 )
+texture = ExtResource( 2 )
+
+[node name="TextureButton" type="TextureButton" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 499.0
+margin_top = 387.0
+margin_right = 627.0
+margin_bottom = 451.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 3 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="logo" type="Sprite" parent="." index="3"]
+
+position = Vector2( 699.811, 745.299 )
+texture = ExtResource( 4 )
+
+
