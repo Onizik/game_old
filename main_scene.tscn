@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/other stuff/fire.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/other stuff/damage.wav" type="AudioStream" id=6]
 
-[node name="root" type="Node2D" index="0"]
+[node name="root" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -20,7 +20,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="player" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 426.022, 531.336 )
-_sections_unfolded = [ "Material", "Pause" ]
+_sections_unfolded = [ "Material", "Pause", "Z Index" ]
 
 [node name="label" type="Label" parent="." index="2"]
 

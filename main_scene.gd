@@ -7,8 +7,11 @@ var generate_time = 0
 var unit = preload("res://unit.tscn")
 var barrier = preload("res://barrier.tscn")
 
+var portal = preload("res://portal.tscn")
+var exitst_portal = false
+
 func _ready():
-	generate2()
+	pass
 
 func _process(delta):
 	time -= delta
@@ -33,6 +36,13 @@ func _process(delta):
 			generate_1()
 			generate_2()
 			generate_time = default_generate_time
+	elif not exitst_portal:
+		generate_portal()
+		exitst_portal = true
+
+func generate_portal():
+	var new_portal = portal.instance()
+	add_child(new_portal)
 
 func generate_1():
 	var new_barrier = barrier.instance()

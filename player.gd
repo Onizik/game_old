@@ -14,7 +14,7 @@ var unit = preload("res://unit.tscn")
 func _ready():
 	screen_height = ProjectSettings.get_setting("display/window/size/height")
 	screen_width = ProjectSettings.get_setting("display/window/size/width")
-	for i in range(30):
+	for i in range(25):
 		generate_unit()
 	
 func _process(delta):
@@ -58,7 +58,8 @@ func push_unit():
 		var current_unit = units.pop_front()
 		emit_signal("push", position + current_unit.position)
 		current_unit.queue_free()
-		$"../fire".play()
+		if $"../fire" !=null:
+			$"../fire".play()
 
 func dead_unit_():
 	var current_unit = units.pop_front()
@@ -73,3 +74,5 @@ func _on_player_body_entered(body):
 			$"../damage".play()
 		else:
 			get_tree().change_scene("res://defeat.tscn")
+	elif body.get_name() == "portal":
+		get_tree().change_scene("res://vin.tscn")
