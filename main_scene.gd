@@ -8,7 +8,7 @@ var unit = preload("res://unit.tscn")
 var barrier = preload("res://barrier.tscn")
 
 func _ready():
-	pass
+	generate2()
 
 func _process(delta):
 	time -= delta
@@ -30,8 +30,21 @@ func _process(delta):
 				generate6()
 			elif rand == 6:
 				generate7()
+			generate_1()
+			generate_2()
 			generate_time = default_generate_time
 
+func generate_1():
+	var new_barrier = barrier.instance()
+	new_barrier.position.y = -60
+	new_barrier.position.x = 20
+	add_child(new_barrier)
+	
+func generate_2():
+	var new_barrier = barrier.instance()
+	new_barrier.position.y = -20
+	new_barrier.position.x = 780
+	add_child(new_barrier)
 
 func generate1():
 	for i in range(15):

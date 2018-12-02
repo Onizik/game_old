@@ -37,6 +37,14 @@ func move(delta):
 		push_unit()
 	
 	position += direction.normalized() * delta * speed
+	if position.y > 768:
+		position.y = 768
+	if position.y < 0:
+		position.y = 0
+	if position.x > 800:
+		position.x = 800
+	if position.x < 0:
+		position.x = 0
 
 func generate_unit():
 	var new_unit = unit.instance()
@@ -63,3 +71,5 @@ func _on_player_body_entered(body):
 		if units.size() > 0:
 			dead_unit_()
 			$"../damage".play()
+		else:
+			get_tree().change_scene("res://defeat.tscn")
