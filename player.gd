@@ -50,6 +50,7 @@ func push_unit():
 		var current_unit = units.pop_front()
 		emit_signal("push", position + current_unit.position)
 		current_unit.queue_free()
+		$"../fire".play()
 
 func dead_unit_():
 	var current_unit = units.pop_front()
@@ -61,3 +62,4 @@ func _on_player_body_entered(body):
 	if body.get_name()[0] == "@":
 		if units.size() > 0:
 			dead_unit_()
+			$"../damage".play()
