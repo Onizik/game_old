@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/other stuff/fire.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/other stuff/damage.wav" type="AudioStream" id=6]
 
-[node name="root" type="Node2D"]
+[node name="root" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
