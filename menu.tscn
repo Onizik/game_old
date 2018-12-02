@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/other stuff/background1.png" type="Texture" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://TextureButton.gd" type="Script" id=5]
 [ext_resource path="res://assets/other stuff/groupLogo.png" type="Texture" id=6]
 [ext_resource path="res://player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/other stuff/Dr_Doctor_-_12_-_Semilanceata.ogg" type="AudioStream" id=8]
 
-[node name="root" type="Node2D" index="0"]
+[node name="root" type="Node2D"]
 
 position = Vector2( 33.0499, 31.3003 )
 script = ExtResource( 1 )
@@ -79,6 +80,15 @@ size_flags_vertical = 4
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 8 )
+volume_db = -20.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]
 

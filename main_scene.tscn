@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/other stuff/fire.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/other stuff/damage.wav" type="AudioStream" id=6]
 
-[node name="root" type="Node2D"]
+[node name="root" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -44,7 +44,7 @@ max_lines_visible = -1
 [node name="music" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = ExtResource( 4 )
-volume_db = -20.0
+volume_db = -10.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
@@ -53,7 +53,7 @@ bus = "Master"
 [node name="fire" type="AudioStreamPlayer" parent="." index="4"]
 
 stream = ExtResource( 5 )
-volume_db = 0.0
+volume_db = -10.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
@@ -62,7 +62,7 @@ bus = "Master"
 [node name="damage" type="AudioStreamPlayer" parent="." index="5"]
 
 stream = ExtResource( 6 )
-volume_db = -5.0
+volume_db = -15.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
