@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://barrier.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/objects/object5.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/objects/object2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/Rocks/rock2.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/objects/object3.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/Rocks/rock4.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/Rocks/rock1.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/objects/object1.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/objects/object3.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/Rocks/rock2.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/objects/object1.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/objects/object2.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/Rocks/rock1.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/objects/object5.png" type="Texture" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -19,12 +19,12 @@ radius = 31.4066
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": false,
-"name": "7",
+"name": "2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": false,
-"name": "5",
+"name": "6",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -34,26 +34,26 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": false,
-"name": "1",
+"name": "4",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": false,
-"name": "4",
+"name": "5",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": false,
-"name": "6",
+"name": "1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": false,
-"name": "2",
+"name": "7",
 "speed": 5.0
 } ]
 
-[node name="body" type="RigidBody2D"]
+[node name="barrier" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1024

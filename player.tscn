@@ -31,14 +31,14 @@ script = ExtResource( 1 )
 
 frames = SubResource( 1 )
 animation = "default"
-frame = 6
+frame = 11
 playing = true
 
 [node name="player" type="RigidBody2D" parent="." index="1"]
 
 input_pickable = false
 collision_layer = 1024
-collision_mask = 0
+collision_mask = 1024
 mode = 3
 mass = 1.0
 friction = 1.0
@@ -46,8 +46,8 @@ bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 500
+contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
@@ -60,5 +60,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 0, -8.91606 )
 shape = SubResource( 2 )
+
+[connection signal="body_entered" from="player" to="." method="_on_player_body_entered"]
 
 

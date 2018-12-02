@@ -8,6 +8,7 @@ var max_length = 80
 var normal_state = 0
 var attack_state = 1
 var wait_state = 2
+var dead_state = 3
 var current_state = normal_state
 
 var wait_time = 10
@@ -15,7 +16,7 @@ var wait_time = 10
 var current_direction = Vector2(randf() -0.5, randf() -0.5)
 var current_direction_time = 0
 
-var max_direction_time = 0.4
+var max_direction_time = 0.8
 
 func _ready():
 	pass
@@ -25,10 +26,12 @@ func _process(delta):
 		normal_moving(delta)
 	elif current_state == attack_state:
 		position.y -= 800 * delta
-		if position.y < -200:
+		if position.y < -200 or position.y > 900:
 			queue_free()
 	elif current_state == wait_state:
 		wait_moving(delta)
+	elif current_state == dead_state:
+		dead_moving(delta)
 
 func normal_moving(delta):
 	if current_direction_time > max_direction_time:
@@ -48,6 +51,12 @@ func wait_moving(delta):
 		wait_time -= delta
 		position.y += 10 * delta * wait_time
 
+func dead_moving(delta):
+	var screen_height = ProjectSettings.get_setting("display/window/size/height")
+	position.y += 160 * delta
+	if position.y > screen_height:
+		queue_free()
+
 func generate_random():
 	var random = (randi() % 2)
 	if random == 0:
@@ -56,7 +65,7 @@ func generate_random():
 
 func _on_body_body_entered(body):
 	print(body.get_name())
-	if current_state == attack_state and body.get_name()[0] == "b":
+	if current_state == attack_state and body.get_name()[1] == "b":
 		body.mode = body.MODE_RIGID 
 		current_state = wait_state
 	if current_state == wait_state and body.get_name() == "player":

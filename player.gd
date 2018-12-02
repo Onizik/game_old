@@ -1,6 +1,7 @@
 extends Node2D
 
 signal push(absolute_position)
+signal dead_unit(absolute_position)
 
 var speed = 400
 var screen_height
@@ -13,10 +14,12 @@ var unit = preload("res://unit.tscn")
 func _ready():
 	screen_height = ProjectSettings.get_setting("display/window/size/height")
 	screen_width = ProjectSettings.get_setting("display/window/size/width")
-	for i in range(20):
+	for i in range(30):
 		generate_unit()
 	
 func _process(delta):
+	if units.size() > 0:
+		units[0].get_node("circle").show()
 	move(delta)
 	get_tree().get_root().get_node("root/label").text = "units : " + str(units.size())
 
@@ -47,3 +50,14 @@ func push_unit():
 		var current_unit = units.pop_front()
 		emit_signal("push", position + current_unit.position)
 		current_unit.queue_free()
+
+func dead_unit_():
+	var current_unit = units.pop_front()
+	emit_signal("dead_unit", position)
+	current_unit.queue_free()
+
+
+func _on_player_body_entered(body):
+	if body.get_name()[0] == "@":
+		if units.size() > 0:
+			dead_unit_()

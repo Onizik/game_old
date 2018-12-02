@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://main_scene.gd" type="Script" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://barrier.tscn" type="PackedScene" id=3]
 
-[node name="root" type="Node2D"]
+[node name="root" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -13,39 +12,7 @@ script = ExtResource( 1 )
 position = Vector2( 426.022, 531.336 )
 _sections_unfolded = [ "Material", "Pause" ]
 
-[node name="body" parent="." index="1" instance=ExtResource( 3 )]
-
-position = Vector2( 470, 130 )
-
-[node name="body2" parent="." index="2" instance=ExtResource( 3 )]
-
-position = Vector2( 290, 120 )
-
-[node name="body3" parent="." index="3" instance=ExtResource( 3 )]
-
-position = Vector2( 660, 90 )
-
-[node name="body4" parent="." index="4" instance=ExtResource( 3 )]
-
-position = Vector2( 30, 90 )
-
-[node name="body5" parent="." index="5" instance=ExtResource( 3 )]
-
-position = Vector2( 140, 180 )
-
-[node name="body6" parent="." index="6" instance=ExtResource( 3 )]
-
-position = Vector2( 160, 50 )
-
-[node name="body7" parent="." index="7" instance=ExtResource( 3 )]
-
-position = Vector2( 410, 50 )
-
-[node name="body8" parent="." index="8" instance=ExtResource( 3 )]
-
-position = Vector2( 610, 180 )
-
-[node name="label" type="Label" parent="." index="9"]
+[node name="label" type="Label" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -62,6 +29,8 @@ size_flags_vertical = 4
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[connection signal="dead_unit" from="player" to="." method="_on_player_dead_unit"]
 
 [connection signal="push" from="player" to="." method="_on_player_push"]
 
