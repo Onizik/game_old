@@ -13,31 +13,12 @@ var unit = preload("res://unit.tscn")
 func _ready():
 	screen_height = ProjectSettings.get_setting("display/window/size/height")
 	screen_width = ProjectSettings.get_setting("display/window/size/width")
-	player_size = $sprite.texture.get_size() * $sprite.scale
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
-	generate_unit()
+	for i in range(20):
+		generate_unit()
 	
 func _process(delta):
 	move(delta)
+	get_tree().get_root().get_node("root/label").text = "units : " + str(units.size())
 
 func move(delta):
 	var direction = Vector2()

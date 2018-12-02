@@ -7,12 +7,15 @@ var max_length = 80
 
 var normal_state = 0
 var attack_state = 1
+var wait_state = 2
 var current_state = normal_state
+
+var wait_time = 10
 
 var current_direction = Vector2(randf() -0.5, randf() -0.5)
 var current_direction_time = 0
 
-var max_direction_time = 0.2
+var max_direction_time = 0.4
 
 func _ready():
 	pass
@@ -24,6 +27,8 @@ func _process(delta):
 		position.y -= 800 * delta
 		if position.y < -200:
 			queue_free()
+	elif current_state == wait_state:
+		wait_moving(delta)
 
 func normal_moving(delta):
 	if current_direction_time > max_direction_time:
@@ -38,10 +43,22 @@ func normal_moving(delta):
 		current_direction = center - position
 		current_direction = current_direction.normalized()
 
-
+func wait_moving(delta):
+	if wait_time >= 0:
+		wait_time -= delta
+		position.y += 10 * delta * wait_time
 
 func generate_random():
 	var random = (randi() % 2)
 	if random == 0:
 		random = -1
 	return random
+
+func _on_body_body_entered(body):
+	print(body.get_name())
+	if current_state == attack_state and body.get_name()[0] == "b":
+		body.mode = body.MODE_RIGID 
+		current_state = wait_state
+	if current_state == wait_state and body.get_name() == "player":
+		get_tree().get_root().get_node("root/player").generate_unit()
+		queue_free()

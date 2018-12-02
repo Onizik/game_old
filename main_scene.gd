@@ -17,4 +17,5 @@ func _on_player_push(absolute_position):
 	var new_unit = unit.instance()
 	new_unit.position = absolute_position
 	new_unit.current_state = new_unit.attack_state
+	new_unit.get_node("body").contact_monitor = true
 	add_child(new_unit)

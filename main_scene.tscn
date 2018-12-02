@@ -1,20 +1,67 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://main_scene.gd" type="Script" id=1]
-[ext_resource path="res://barrier.tscn" type="PackedScene" id=2]
-[ext_resource path="res://player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://barrier.tscn" type="PackedScene" id=3]
 
 [node name="root" type="Node2D"]
 
 script = ExtResource( 1 )
 
-[node name="barrier" parent="." index="0" instance=ExtResource( 2 )]
+[node name="player" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 497.714, 121.923 )
+position = Vector2( 426.022, 531.336 )
+_sections_unfolded = [ "Material", "Pause" ]
 
-[node name="player" parent="." index="1" instance=ExtResource( 3 )]
+[node name="body" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 155.452, 122.141 )
+position = Vector2( 470, 130 )
+
+[node name="body2" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 290, 120 )
+
+[node name="body3" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 660, 90 )
+
+[node name="body4" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 30, 90 )
+
+[node name="body5" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 140, 180 )
+
+[node name="body6" parent="." index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 160, 50 )
+
+[node name="body7" parent="." index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 410, 50 )
+
+[node name="body8" parent="." index="8" instance=ExtResource( 3 )]
+
+position = Vector2( 610, 180 )
+
+[node name="label" type="Label" parent="." index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [connection signal="push" from="player" to="." method="_on_player_push"]
 

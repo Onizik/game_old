@@ -3,7 +3,8 @@ extends Node2D
 var velocity = Vector2(0, 100)
 
 func _ready():
-	pass
+	var anim = str(randi() % 7 + 1)
+	$anim.play(anim)
 
 func _process(delta):
 	self.position += velocity * delta
